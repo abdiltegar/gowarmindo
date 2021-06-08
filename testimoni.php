@@ -55,7 +55,7 @@
                     <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card">
+                            <div class="card menu-card-light">
                                 <div class="card-body">
                                     <img src="images/149071.png" class="logo" alt="">
                                     <span class="text-green">Ahmad Fulan</span>
@@ -70,7 +70,7 @@
                     <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card">
+                            <div class="card menu-card-light">
                                 <div class="card-body">
                                     <img src="images/149071.png" class="logo" alt="">
                                     <span class="text-green">Ahmad Fulan</span>
@@ -85,7 +85,7 @@
                     <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card">
+                            <div class="card menu-card-light">
                                 <div class="card-body">
                                     <img src="images/149071.png" class="logo" alt="">
                                     <span class="text-green">Ahmad Fulan</span>
@@ -100,7 +100,7 @@
                     <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card">
+                            <div class="card menu-card-light">
                                 <div class="card-body">
                                     <img src="images/149071.png" class="logo" alt="">
                                     <span class="text-green">Ahmad Fulan</span>
@@ -115,7 +115,7 @@
                     <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card">
+                            <div class="card menu-card-light">
                                 <div class="card-body">
                                     <img src="images/149071.png" class="logo" alt="">
                                     <span class="text-green">Ahmad Fulan</span>
