@@ -51,7 +51,7 @@
                         <h1 class="text-green">Makanan</h1>
                     </center>
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-light table-bordered table-striped" id="table">
                             <thead>
                                 <tr>
                                     <th>No.</th>
@@ -174,9 +174,11 @@
                 $('#navbar').removeClass("navbar-light");
                 $('#navbar').removeClass("bg-light");
                 $('#body').removeClass("body-light");
+                $('#table').removeClass("table-light");
                 $('#navbar').addClass("navbar-dark");
                 $('#navbar').addClass("bg-dark");
                 $('#body').addClass("body-dark");
+                $('#table').addClass("table-dark");
                 $('.menu-card-light').addClass("menu-card-dark");
                 $('.menu-card-light').removeClass("menu-card-light");
                 $('#toDarkTheme').css("display","none");
@@ -187,9 +189,11 @@
                 $('#navbar').removeClass("navbar-dark");
                 $('#navbar').removeClass("bg-dark");
                 $('#body').removeClass("body-dark");
+                $('#table').removeClass("table-dark");
                 $('#navbar').addClass("navbar-light");
                 $('#navbar').addClass("bg-light");
                 $('#body').addClass("body-light");
+                $('#table').addClass("table-light");
                 $('.menu-card-dark').addClass("menu-card-light");
                 $('.menu-card-dark').removeClass("menu-card-dark");
                 $('#toDarkTheme').css("display","block");
