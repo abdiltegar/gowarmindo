@@ -56,7 +56,7 @@
                     <br><br>
                 </div>
                 <div class="col-md-5 container-right">
-                    <img src="images/home.png" class="image-show fade-in" alt="">
+                    <img src="images/logo.png" class="image-show fade-in" alt="">
                 </div>
                 <div class="col-md-1"></div>
             </div>
