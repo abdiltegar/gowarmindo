@@ -61,6 +61,12 @@ body{
     height:150px;
     width:150px;
 }
+.img-menu2{
+    width:100px;
+}
+.logo{
+    height:30px;
+}
 .menu-card-light{
     background-color: #fff !important;
     color: black !important;
@@ -150,6 +156,10 @@ body{
     -o-transition: 0.5s;
     animation: fadeIn;
     animation-duration: 0.5s;
+}
+.small-info{
+    font-size:11px;
+    float:right;
 }
 
 @keyframes fadeIn {

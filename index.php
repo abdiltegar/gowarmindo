@@ -47,7 +47,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-1"></div>
-                <div class="col-md-5 container-left fade-in">
+                    <div class="col-md-5 container-left fade-in"> &nbsp;
                     <h1 class="text-green">Go Warmindo</h1>
                     <b>
                         Cobain makanan lezat kami.
