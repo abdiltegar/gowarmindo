@@ -1,7 +1,7 @@
 <?php
 
-class makanan{
-    public $id_makanan, $nama_makanan, $foto, $deskripsi, $harga, $created_by, $created_date, $modified_by, $modified_date;
+class minuman{
+    public $id_minuman, $nama_minuman, $foto, $deskripsi, $harga, $created_by, $created_date, $modified_by, $modified_date;
 
     function getAll(){
         include 'config.php';
@@ -9,34 +9,34 @@ class makanan{
         $respon['total'] = 0;
         $respon['data'] = [];
 
-        $query_makanan = mysqli_query($koneksi, "SELECT * FROM makanan ORDER BY nama_makanan ASC");
-        if(mysqli_num_rows($query_makanan) > 0){
-            $respon['total'] = mysqli_num_rows($query_makanan);
+        $query_minuman = mysqli_query($koneksi, "SELECT * FROM minuman ORDER BY nama_minuman ASC");
+        if(mysqli_num_rows($query_minuman) > 0){
+            $respon['total'] = mysqli_num_rows($query_minuman);
             $i = 0;
-            while ($data_makanan = mysqli_fetch_assoc($query_makanan)){
-                $respon['data'][$i] = $data_makanan;
+            while ($data_minuman = mysqli_fetch_assoc($query_minuman)){
+                $respon['data'][$i] = $data_minuman;
                 $i++;
             }
         }
         return $respon;
     }
 
-    function find($id_makanan){
+    function find($id_minuman){
         include 'config.php';
 
         $respon = [];
 
-        $query_makanan = mysqli_query($koneksi, "SELECT * FROM makanan WHERE id_makanan=".$id_makanan."");
-        if(mysqli_num_rows($query_makanan) > 0){
-            $respon['total'] = mysqli_num_rows($query_makanan);
-            while ($data_makanan = mysqli_fetch_assoc($query_makanan)){
-                $respon = $data_makanan;
+        $query_minuman = mysqli_query($koneksi, "SELECT * FROM minuman WHERE id_minuman=".$id_minuman."");
+        if(mysqli_num_rows($query_minuman) > 0){
+            $respon['total'] = mysqli_num_rows($query_minuman);
+            while ($data_minuman = mysqli_fetch_assoc($query_minuman)){
+                $respon = $data_minuman;
             }
         }
         return $respon;
     }
 
-    function create($nama_makanan, $foto, $deskripsi, $harga){
+    function create($nama_minuman, $foto, $deskripsi, $harga){
         include 'config.php';
 
         $respon["status"] = 1;
@@ -49,8 +49,8 @@ class makanan{
             if($id_role == 1){// cek apakah role nya sebagai admin atau bukan , jika admin lanjut, jika bukan tampilkan pesan tidak memiliki akses
                 $created_date = Date("Y-m-d H:i:s");
                 try{
-                    $insert = mysqli_query($koneksi, "INSERT INTO makanan (nama_makanan, foto, deskripsi, harga, created_by, created_date) VALUES(".
-                                            "'".$nama_makanan."', ".
+                    $insert = mysqli_query($koneksi, "INSERT INTO minuman (nama_minuman, foto, deskripsi, harga, created_by, created_date) VALUES(".
+                                            "'".$nama_minuman."', ".
                                             "'".$foto."', ".
                                             "'".$deskripsi."', ".
                                             "'".$harga."', ".
@@ -80,7 +80,7 @@ class makanan{
         return $respon;
     }
 
-    function update($id_makanan, $nama_makanan, $foto, $deskripsi, $harga){
+    function update($id_minuman, $nama_minuman, $foto, $deskripsi, $harga){
         include 'config.php';
 
         $respon["status"] = 1;
@@ -93,14 +93,14 @@ class makanan{
             if($id_role == 1){// cek apakah role nya sebagai admin atau bukan , jika admin lanjut, jika bukan tampilkan pesan tidak memiliki akses
                 $modified_date = Date("Y-m-d H:i:s");
                 try{
-                    $update = mysqli_query($koneksi, "UPDATE makanan SET ".
-                                " nama_makanan='".$nama_makanan."', ".
+                    $update = mysqli_query($koneksi, "UPDATE minuman SET ".
+                                " nama_minuman='".$nama_minuman."', ".
                                 " foto='".$foto."', ".
                                 " deskripsi='".$deskripsi."', ".
                                 " harga='".$harga."', ".
                                 " modified_by='".$id_user."', ".
                                 " modified_date='".$modified_date."'".
-                                " WHERE id_makanan='".$id_makanan."'");
+                                " WHERE id_minuman='".$id_minuman."'");
 
                     $respon["status"] = 1;
                     $respon["message"] = "Berhasil mengubah data.";
@@ -120,7 +120,7 @@ class makanan{
         return $respon;
     }
 
-    function delete($id_makanan){
+    function delete($id_minuman){
         include 'config.php';
 
         $respon["status"] = 1;
@@ -133,7 +133,7 @@ class makanan{
             if($id_role == 1){// cek apakah role nya sebagai admin atau bukan , jika admin lanjut, jika bukan tampilkan pesan tidak memiliki akses
                 $created_date = Date("Y-m-d H:i:s");
                 try{
-                    $delete = mysqli_query($koneksi, "DELETE FROM makanan WHERE id_makanan='".$id_makanan."'");
+                    $delete = mysqli_query($koneksi, "DELETE FROM minuman WHERE id_minuman='".$id_minuman."'");
 
                     $respon["status"] = 1;
                     $respon["message"] = "Berhasil menghapus data.";

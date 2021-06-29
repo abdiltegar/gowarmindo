@@ -1,3 +1,10 @@
+<?php 
+session_start();
+include '../library/minuman.php';
+include '../library/user.php';
+$minuman = new minuman();
+$user = new user();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../script/jquery.js"></script>
     <title>Go Warmindo</title>
 </head>
 <body id="body" class="body-light" data-spy="scroll" data-target="#navbarKu" data-offset="1">
+    <?php include '../login.php'; ?>
     <a href="#" class="float">
         <img src="../images/noun_up_1684524.svg" alt="">
     </a>
@@ -36,6 +45,28 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../testimoni/">Testimoni</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="../images/149071.png" alt="" class="icon">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <?php
+                        if(isset($_SESSION['user_id'])){
+                        ?>
+                        <span style="width: 100%;padding: .25rem 1rem;"> Hi <?php echo $_SESSION['user_nama']?> </span>
+                        <hr>
+                        <a class="dropdown-item" href="../logout.php">Logout</a>
+                        <?php
+                        }else{
+                        ?>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalLogin">Login</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalRegister">Register</a>
+                        <?php
+                        }
+                        ?>
+                        
+                    </div>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="javascript:;" id="toDarkTheme" style="display: block;"><img src="../images/noun_dark theme_1664849.svg" alt="" class="icon"></a>
                     <a class="nav-link" href="javascript:;" id="toLightTheme" style="display: none;"><img src="../images/noun_light theme_2853779.svg" alt="" class="icon"></a>
@@ -45,168 +76,12 @@
         </div>
     </nav>
     <section class="section" id="sectionBeranda">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 fade-in">
-                    <center>
-                        <img src="../images/logo.png" class="img-menu2" alt=""><br><br>
-                        <h1 class="text-green">Minuman</h1>
-                    </center>
-                    <div class="table-responsive">
-                        <table class="table table-light table-bordered table-striped" id="table">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Nama</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Susu Sirup</td>
-                                    <td>Rp. 5.500</td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>Susu Milo</td>
-                                    <td>Rp. 6.000</td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>Susu Jahe</td>
-                                    <td>Rp. 5.500</td>
-                                </tr>
-                                <tr>
-                                    <td>4.</td>
-                                    <td>Kopi Susu</td>
-                                    <td>Rp. 5.000</td>
-                                </tr>
-                                <tr>
-                                    <td>5.</td>
-                                    <td>JOSHUA</td>
-                                    <td>Rp. 5.000</td>
-                                </tr>
-                                <tr>
-                                    <td>6.</td>
-                                    <td>Soda Gembira</td>
-                                    <td>Rp. 8.500</td>
-                                </tr>
-                                <tr>
-                                    <td>7.</td>
-                                    <td>Milo</td>
-                                    <td>Rp. 3.400</td>
-                                </tr>
-                                <tr>
-                                    <td>8.</td>
-                                    <td>Energen</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>9.</td>
-                                    <td>Capucino</td>
-                                    <td>Rp. 4.000</td>
-                                </tr>
-                                <tr>
-                                    <td>10.</td>
-                                    <td>STMJ</td>
-                                    <td>Rp. 4.000</td>
-                                </tr>
-                                <tr>
-                                    <td>11.</td>
-                                    <td>Susu</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>12.</td>
-                                    <td>Adem Sari</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>13.</td>
-                                    <td>Sirop</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>14.</td>
-                                    <td>Nutrisari</td>
-                                    <td>Rp. 3.500</td>
-                                </tr>
-                                <tr>
-                                    <td>15.</td>
-                                    <td>Jahe Wangi</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>16.</td>
-                                    <td>Extra Joss</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>17.</td>
-                                    <td>White Kopi</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>18.</td>
-                                    <td>Jeruk</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>19.</td>
-                                    <td>Kopi</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>20.</td>
-                                    <td>Lemon Tea</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>21.</td>
-                                    <td>Hemaviton</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>22.</td>
-                                    <td>Coffemik</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>23.</td>
-                                    <td>Good Day</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>24.</td>
-                                    <td>ABC Susu</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>25.</td>
-                                    <td>Nescafe</td>
-                                    <td>Rp. 3.000</td>
-                                </tr>
-                                <tr>
-                                    <td>26.</td>
-                                    <td>Teh</td>
-                                    <td>Rp. 2.000</td>
-                                </tr>
-                                <tr>
-                                    <td>27.</td>
-                                    <td>Marimas</td>
-                                    <td>Rp. 2.000</td>
-                                </tr>
-                                <tr>
-                                    <td>28.</td>
-                                    <td>Air Es</td>
-                                    <td>Rp. 1.000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <?php 
+        if(isset($_SESSION['user_id']) && $_SESSION['user_role'] == 1){
+            include 'partial_admin.php';
+        }else{
+            include 'partial_public.php';
+        }
+        ?>
     </section>
     <?php include '../footer.php'; ?>

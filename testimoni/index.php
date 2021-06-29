@@ -1,3 +1,8 @@
+<?php 
+session_start();
+include '../library/user.php';
+$user = new user();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../script/jquery.js"></script>
     <title>Go Warmindo</title>
 </head>
 <body id="body" class="body-light" data-spy="scroll" data-target="#navbarKu" data-offset="1">
+    <?php include '../login.php'; ?>
     <a href="#" class="float">
         <img src="../images/noun_up_1684524.svg" alt="">
     </a>
@@ -35,6 +42,28 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page"  href="testimoni/">Testimoni</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="../images/149071.png" alt="" class="icon">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <?php
+                        if(isset($_SESSION['user_id'])){
+                        ?>
+                        <span style="width: 100%;padding: .25rem 1rem;"> Hi <?php echo $_SESSION['user_nama']?> </span>
+                        <hr>
+                        <a class="dropdown-item" href="../logout.php">Logout</a>
+                        <?php
+                        }else{
+                        ?>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalLogin">Login</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalRegister">Register</a>
+                        <?php
+                        }
+                        ?>
+                        
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="javascript:;" id="toDarkTheme" style="display: block;"><img src="../images/noun_dark theme_1664849.svg" alt="" class="icon"></a>
