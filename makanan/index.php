@@ -17,7 +17,10 @@ $user = new user();
     <title>Go Warmindo</title>
 </head>
 <body id="body" class="body-light" data-spy="scroll" data-target="#navbarKu" data-offset="1">
-    <?php include '../login.php'; ?>
+    <?php 
+    include '../login.php'; 
+    include '../register.php';
+    ?>
     <a href="#" class="float">
         <img src="../images/noun_up_1684524.svg" alt="">
     </a>

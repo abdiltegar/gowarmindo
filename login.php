@@ -9,7 +9,7 @@
                 alert("<?php echo $login['message']; ?>")
             </script>
             <?php
-            // header('Location:.');
+            @header('Location:.');
         }else{
             ?>
             <script type="text/javascript">

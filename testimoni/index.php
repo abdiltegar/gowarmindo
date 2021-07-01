@@ -1,7 +1,9 @@
 <?php 
 session_start();
 include '../library/user.php';
+include '../library/testimoni.php';
 $user = new user();
+$testimoni = new testimoni();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +17,10 @@ $user = new user();
     <title>Go Warmindo</title>
 </head>
 <body id="body" class="body-light" data-spy="scroll" data-target="#navbarKu" data-offset="1">
-    <?php include '../login.php'; ?>
+    <?php 
+    include '../login.php'; 
+    include '../register.php'; 
+    ?>
     <a href="#" class="float">
         <img src="../images/noun_up_1684524.svg" alt="">
     </a>
@@ -74,90 +79,12 @@ $user = new user();
         </div>
     </nav>
     <section class="section" id="sectionBeranda">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 fade-in">
-                    <center>
-                        <img src="../images/logo.png" class="img-menu2" alt=""><br><br>
-                        <h1 class="text-green">Testimoni</h1>
-                    </center>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card menu-card-light">
-                                <div class="card-body">
-                                    <img src="../images/149071.png" class="logo" alt="">
-                                    <span class="text-green">Ahmad Fulan</span>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum minima culpa aspernatur. Est expedita facilis ea suscipit repudiandae vitae, quod voluptatibus dolore ipsa, molestias nobis unde voluptas alias non! In.
-                                    </p>
-                                    <span class="small-info">08 Juni 2021 18:15:00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card menu-card-light">
-                                <div class="card-body">
-                                    <img src="../images/149071.png" class="logo" alt="">
-                                    <span class="text-green">Ahmad Fulan</span>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum minima culpa aspernatur. Est expedita facilis ea suscipit repudiandae vitae, quod voluptatibus dolore ipsa, molestias nobis unde voluptas alias non! In.
-                                    </p>
-                                    <span class="small-info">08 Juni 2021 18:15:00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card menu-card-light">
-                                <div class="card-body">
-                                    <img src="../images/149071.png" class="logo" alt="">
-                                    <span class="text-green">Ahmad Fulan</span>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum minima culpa aspernatur. Est expedita facilis ea suscipit repudiandae vitae, quod voluptatibus dolore ipsa, molestias nobis unde voluptas alias non! In.
-                                    </p>
-                                    <span class="small-info">08 Juni 2021 18:15:00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card menu-card-light">
-                                <div class="card-body">
-                                    <img src="../images/149071.png" class="logo" alt="">
-                                    <span class="text-green">Ahmad Fulan</span>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum minima culpa aspernatur. Est expedita facilis ea suscipit repudiandae vitae, quod voluptatibus dolore ipsa, molestias nobis unde voluptas alias non! In.
-                                    </p>
-                                    <span class="small-info">08 Juni 2021 18:15:00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card menu-card-light">
-                                <div class="card-body">
-                                    <img src="../images/149071.png" class="logo" alt="">
-                                    <span class="text-green">Ahmad Fulan</span>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum minima culpa aspernatur. Est expedita facilis ea suscipit repudiandae vitae, quod voluptatibus dolore ipsa, molestias nobis unde voluptas alias non! In.
-                                    </p>
-                                    <span class="small-info">08 Juni 2021 18:15:00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php 
+            if(isset($_SESSION['user_id']) && $_SESSION['user_role'] == 2){
+                include 'partial_pengunjung.php';
+            }else{
+                include 'partial_public.php';
+            }
+        ?>
     </section>
     <?php include '../footer.php'; ?>

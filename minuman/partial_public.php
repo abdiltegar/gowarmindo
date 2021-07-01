@@ -15,7 +15,7 @@
                             foreach ($minuman_all['data'] as $row){
                                 ?>
                                 <div class="col-md-4" style="margin-top: 20px !important;" data-aos="fade-down">
-                                    <div class="card menu-card-light">
+                                    <div class="card menu-card-light menu-card-menumenu">
                                         <div class="card-body">
                                             <center>
                                                 <img src="../images/upload/<?php echo $row['foto']; ?>" alt="" class="img-menu">
