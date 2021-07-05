@@ -87,7 +87,7 @@ $user = new user();
                     <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card">
+                            <div class="card menu-card-light">
                                 <div class="card-body">
                                     <h1 class="text-green">About Burjo AGM</h1>
                                     <ul>
@@ -108,7 +108,7 @@ $user = new user();
                     <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card">
+                            <div class="card menu-card-light">
                                 <div class="card-body">
                                     <h1 class="text-green">About Kelompok C3</h1>
                                     <ul>
