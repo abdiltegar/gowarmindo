@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2021 at 02:24 PM
+-- Generation Time: Jul 01, 2021 at 07:49 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -39,6 +39,16 @@ CREATE TABLE `makanan` (
   `modified_date` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `makanan`
+--
+
+INSERT INTO `makanan` (`id_makanan`, `nama_makanan`, `deskripsi`, `harga`, `foto`, `created_by`, `created_date`, `modified_by`, `modified_date`) VALUES
+(1, 'Indomie (Rebus / Goreng) Tante', 'Indomie rebus atau goreng tanpa telur dengan tambahan sayuran', '5000', 'makanan_1624981579.jpg', 1, '2021-06-29 22:47:41', NULL, NULL),
+(2, 'Indomie (Rebus / Goreng) Telur', 'Indomie rebus atau goreng telur dengan tambahan sayuran', '7000', 'makanan_1624981679.jpg', 1, '2021-06-29 22:47:41', NULL, NULL),
+(3, 'Nasi Telor', 'Nasi dengan telur dadar dan sayuran sehat', '7000', 'makanan_1624985660.jpg', 1, '2021-06-29 17:56:12', 1, '2021-06-29 18:54:20'),
+(6, 'Nasi Sarden', 'Nasi putih dengan ikan sarden', '8000', 'makanan_1624986625.jpg', 1, '2021-06-29 19:10:25', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -55,19 +65,6 @@ CREATE TABLE `minuman` (
   `created_date` datetime NOT NULL,
   `modified_by` int(11) DEFAULT NULL,
   `modified_date` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `profil_web`
---
-
-CREATE TABLE `profil_web` (
-  `id_profil` int(11) NOT NULL,
-  `deskripsi` longtext NOT NULL,
-  `modified_by` int(11) NOT NULL,
-  `modified_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -101,6 +98,14 @@ CREATE TABLE `testimoni` (
   `id_user` int(11) NOT NULL,
   `waktu` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `testimoni`
+--
+
+INSERT INTO `testimoni` (`id_testimoni`, `deskripsi`, `id_user`, `waktu`) VALUES
+(2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit a libero in volutpat. Ut aliquam eget enim at dapibus. Donec non diam a lacus malesuada eleifend a porttitor quam. Mauris quis lorem nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam nunc turpis, scelerisque sit amet sapien ac, blandit porta metus. Pellentesque nec lectus dui.', 2, '2021-07-01 19:47:24'),
+(3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit a libero in volutpat. Ut aliquam eget enim at dapibus. Donec non diam a lacus malesuada eleifend a porttitor quam. Mauris quis lorem nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam nunc turpis, scelerisque sit amet sapien ac, blandit porta metus. Pellentesque nec lectus dui.', 2, '2021-07-01 19:47:47');
 
 -- --------------------------------------------------------
 
@@ -145,13 +150,6 @@ ALTER TABLE `minuman`
   ADD KEY `fk_user_minuman_edited` (`modified_by`);
 
 --
--- Indexes for table `profil_web`
---
-ALTER TABLE `profil_web`
-  ADD PRIMARY KEY (`id_profil`),
-  ADD KEY `fk_user_profilweb` (`modified_by`);
-
---
 -- Indexes for table `testimoni`
 --
 ALTER TABLE `testimoni`
@@ -172,7 +170,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `makanan`
 --
 ALTER TABLE `makanan`
-  MODIFY `id_makanan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_makanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `minuman`
@@ -181,16 +179,10 @@ ALTER TABLE `minuman`
   MODIFY `id_minuman` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `profil_web`
---
-ALTER TABLE `profil_web`
-  MODIFY `id_profil` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `testimoni`
 --
 ALTER TABLE `testimoni`
-  MODIFY `id_testimoni` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_testimoni` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -215,12 +207,6 @@ ALTER TABLE `makanan`
 ALTER TABLE `minuman`
   ADD CONSTRAINT `fk_user_minuman` FOREIGN KEY (`created_by`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_user_minuman_edited` FOREIGN KEY (`modified_by`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `profil_web`
---
-ALTER TABLE `profil_web`
-  ADD CONSTRAINT `fk_user_profilweb` FOREIGN KEY (`modified_by`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `testimoni`

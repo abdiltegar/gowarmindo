@@ -24,8 +24,8 @@ $user = new user();
     </a>
     <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light" id="navbar">
         <div class="container">
-          <img src="../images/logo.png" class="logo" alt="">
-          <a class="navbar-brand" href="#">Go Warmindo</a>
+          <img src="../images/logo-indomie.png" class="logo" alt="">
+          <a class="navbar-brand" href="#"> &nbsp; Go Warmindo</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarKu" aria-controls="navbarKu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

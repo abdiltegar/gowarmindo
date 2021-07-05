@@ -24,7 +24,8 @@ $user = new User();
     </a>
     <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light" id="navbar">
         <div class="container">
-          <a class="navbar-brand" href="#">Go Warmindo</a>
+            <img src="images/logo-indomie.png" class="logo" alt="">
+          <a class="navbar-brand" href="#"> &nbsp; Go Warmindo</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarKu" aria-controls="navbarKu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -81,10 +82,10 @@ $user = new User();
                 <div class="col-md-1"></div>
                     <div class="col-md-5 container-left fade-in"> &nbsp;
                     <h1 class="text-green">Go Warmindo</h1>
-                    <b>
+                    <b style="color:white;">
                         Cobain makanan lezat kami.
                     </b><br>
-                    <a href="#sectionMinuman" class="btn btn-danger">Lihat Menu</a>
+                    <!-- <a href="#sectionMinuman" class="btn btn-danger">Lihat Menu</a> -->
                     <br><br>
                 </div>
                 <div class="col-md-5 container-right">

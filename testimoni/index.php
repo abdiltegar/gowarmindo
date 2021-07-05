@@ -26,8 +26,8 @@ $testimoni = new testimoni();
     </a>
     <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light" id="navbar">
         <div class="container">
-          <img src="../images/logo.png" class="logo" alt="">
-          <a class="navbar-brand" href="#">Go Warmindo</a>
+          <img src="../images/logo-indomie.png" class="logo" alt="">
+          <a class="navbar-brand" href="#"> &nbsp; Go Warmindo</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarKu" aria-controls="navbarKu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -46,7 +46,7 @@ $testimoni = new testimoni();
                     <a class="nav-link" href="../minuman/">Minuman</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page"  href="testimoni/">Testimoni</a>
+                    <a class="nav-link active" aria-current="page" href="../testimoni/">Testimoni</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

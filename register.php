@@ -1,8 +1,9 @@
 <?php
     if(isset($_POST['btnRegister'])){
         $email = $_POST['email'];
+        $nama = $_POST['nama'];
         $password = $_POST['password'];
-        $register = $user->register($email,$password);
+        $register = $user->register($email,$nama,$password);
         if($register['status'] == 1){
             ?>
             <script type="text/javascript">

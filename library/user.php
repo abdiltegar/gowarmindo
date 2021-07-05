@@ -33,7 +33,7 @@ class User{
         $role = 2;
         $encrypt_pass_md5 = md5($password);
         
-        $query_user = mysqli_query($koneksi, "INSERT INTO user SET(email, password, nama, role) VALUES('".$email."','".$nama."','".$encrypt_pass_md5."',".$role.")");
+        $query_user = mysqli_query($koneksi, "INSERT INTO user (email, password, nama, role) VALUES('".$email."','".$encrypt_pass_md5."','".$nama."',".$role.")");
         if($query_user){
             $respon['status'] = 1;
             $respon['message'] = "Register berhasil";

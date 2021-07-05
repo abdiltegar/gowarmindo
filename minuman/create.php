@@ -50,11 +50,11 @@ if(isset($_POST['btnCreate'])){
 
 }
 ?>
-<div class="modal fade" id="modalCreateminuman" tabindex="-1" role="dialog" aria-labelledby="modalCreateminumanTitle" aria-hidden="true">
+<div class="modal fade" id="modalCreateMinuman" tabindex="-1" role="dialog" aria-labelledby="modalCreateMinumanTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalCreateminumanTitle">Tambah Minuman</h5>
+        <h5 class="modal-title" id="modalCreateMinumanTitle">Tambah Minuman</h5>
         <button type="button" class="close btn btn-sm btn-default" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

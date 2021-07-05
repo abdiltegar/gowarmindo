@@ -6,19 +6,20 @@
                 <h1 class="text-green">Minuman</h1>
             </center>
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
                     <div class="row">
                         <?php 
                         $minuman_all = $minuman->getAll();
                         if($minuman_all['total'] > 0){
                             foreach ($minuman_all['data'] as $row){
+                                $foto = $row['foto'];
                                 ?>
-                                <div class="col-md-4" style="margin-top: 20px !important;" data-aos="fade-down">
+                                <div class="col-md-3" style="margin-top: 20px !important;" data-aos="fade-down">
                                     <div class="card menu-card-light menu-card-menumenu">
                                         <div class="card-body">
                                             <center>
-                                                <img src="../images/upload/<?php echo $row['foto']; ?>" alt="" class="img-menu">
+                                            <div class="img-menu" style="background:url('../images/upload/<?php echo $foto; ?>') no-repeat center center;background-size: cover;">&nbsp;</div>
                                             </center>
                                             <br>
                                             <b><?php echo $row['nama_minuman']; ?></b>
@@ -40,7 +41,7 @@
                         ?>
                     </div>
                 </div>
-                <div class="col-md-2"></div>
+                <div class="col-md-1"></div>
             </div>
         </div>
     </div>
