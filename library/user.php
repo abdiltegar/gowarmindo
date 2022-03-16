@@ -1,7 +1,17 @@
 <?php
+/**
+ * Kelas User digunakan untuk keperluan login , register dan menemukan data user
+ */
 class User{
     public $id_user, $email, $nama, $password, $role_id;
 
+    /**
+     * Digunakan untuk login ke aplikasi , bisa sebagai admin ataupun pengunjung, sesuai dengan role user tersebut
+     * @param mixed $email
+     * @param mixed $password
+     * 
+     * @return [type]
+     */
     function login($email, $password){
         include 'config.php';
         $respon['status'] = 0;
@@ -25,6 +35,14 @@ class User{
         return $respon;
     }
 
+    /**
+     * Digunakan untuk register , otomatis sebagai pengunjung
+     * @param mixed $email
+     * @param mixed $nama
+     * @param mixed $password
+     * 
+     * @return [type]
+     */
     function register($email, $nama, $password){
         include 'config.php';
         $respon['status'] = 0;
@@ -54,6 +72,12 @@ class User{
         return $respon;
     }
 
+    /**
+     * Digunakan untuk mengambil satu data user
+     * @param mixed $id_user
+     * 
+     * @return [type]
+     */
     function find($id_user){
         include 'config.php';
         

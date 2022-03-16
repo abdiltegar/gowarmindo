@@ -1,8 +1,15 @@
 <?php
 
+/**
+ * Kelas makanan dibuat untuk menangani CRUD yang berhubungan dengan table makanan
+ */
 class makanan{
     public $id_makanan, $nama_makanan, $foto, $deskripsi, $harga, $created_by, $created_date, $modified_by, $modified_date;
 
+    /**
+     * Digunakan untuk mendapatkan semua data makanan
+     * @return [type]
+     */
     function getAll(){
         include 'config.php';
 
@@ -21,6 +28,12 @@ class makanan{
         return $respon;
     }
 
+    /**
+     * Digunakan untuk mengambil satu data makanan
+     * @param mixed $id_makanan
+     * 
+     * @return [type]
+     */
     function find($id_makanan){
         include 'config.php';
 
@@ -36,6 +49,15 @@ class makanan{
         return $respon;
     }
 
+    /**
+     * Digunakan untuk menambahkan data makanan
+     * @param mixed $nama_makanan
+     * @param mixed $foto
+     * @param mixed $deskripsi
+     * @param mixed $harga
+     * 
+     * @return [type]
+     */
     function create($nama_makanan, $foto, $deskripsi, $harga){
         include 'config.php';
 
@@ -80,6 +102,16 @@ class makanan{
         return $respon;
     }
 
+    /**
+     * Digunakan untuk mengubah data makanan
+     * @param mixed $id_makanan
+     * @param mixed $nama_makanan
+     * @param mixed $foto
+     * @param mixed $deskripsi
+     * @param mixed $harga
+     * 
+     * @return [type]
+     */
     function update($id_makanan, $nama_makanan, $foto, $deskripsi, $harga){
         include 'config.php';
 
@@ -120,6 +152,12 @@ class makanan{
         return $respon;
     }
 
+    /**
+     * Digunakan untuk menghapus data makanan
+     * @param mixed $id_makanan
+     * 
+     * @return [type]
+     */
     function delete($id_makanan){
         include 'config.php';
 

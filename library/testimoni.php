@@ -1,8 +1,15 @@
 <?php
 
+/**
+ * Kelas testimoni dibuat untuk menangani CRUD yang berhubungan dengan table testimoni
+ */
 class testimoni{
     public $id_testimoni, $deskripsi, $id_user, $waktu;
 
+    /**
+     * Digunakan untuk mengambil semua data testimoni
+     * @return [type]
+     */
     function getAll(){
         include 'config.php';
 
@@ -21,6 +28,12 @@ class testimoni{
         return $respon;
     }
 
+    /**
+     * Digunakan untuk mengambil satu data testimoni
+     * @param mixed $id_testimoni
+     * 
+     * @return [type]
+     */
     function find($id_testimoni){
         include 'config.php';
 
@@ -36,6 +49,13 @@ class testimoni{
         return $respon;
     }
 
+    /**
+     * Digunakan untuk membuat data testimoni baru
+     * @param mixed $id_user
+     * @param mixed $deskripsi
+     * 
+     * @return [type]
+     */
     function create($id_user, $deskripsi){
         include 'config.php';
 
@@ -77,6 +97,14 @@ class testimoni{
         return $respon;
     }
 
+    /**
+     * Digunakan untuk merubah data testimoni
+     * @param mixed $id_testimoni
+     * @param mixed $id_user
+     * @param mixed $deskripsi
+     * 
+     * @return [type]
+     */
     function update($id_testimoni, $id_user, $deskripsi){
         include 'config.php';
 
@@ -112,6 +140,13 @@ class testimoni{
         return $respon;
     }
 
+    /**
+     * Digunakan untuk menghapus data testimoni
+     * @param mixed $id_testimoni
+     * @param mixed $id_user
+     * 
+     * @return [type]
+     */
     function delete($id_testimoni, $id_user){
         include 'config.php';
 

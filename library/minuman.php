@@ -1,8 +1,15 @@
 <?php
 
+/**
+ * Kelas minuman dibuat untuk menangani CRUD yang berhubungan dengan table minuman
+ */
 class minuman{
     public $id_minuman, $nama_minuman, $foto, $deskripsi, $harga, $created_by, $created_date, $modified_by, $modified_date;
 
+    /**
+     * Digunakan untuk mendapatkan semua data minuman
+     * @return [type]
+     */
     function getAll(){
         include 'config.php';
 
@@ -21,6 +28,12 @@ class minuman{
         return $respon;
     }
 
+    /**
+     * Digunakan untuk mendapatkan satu data minuman
+     * @param mixed $id_minuman
+     * 
+     * @return [type]
+     */
     function find($id_minuman){
         include 'config.php';
 
@@ -36,6 +49,15 @@ class minuman{
         return $respon;
     }
 
+    /**
+     * Digunakan untuk menambahkan data minuman
+     * @param mixed $nama_minuman
+     * @param mixed $foto
+     * @param mixed $deskripsi
+     * @param mixed $harga
+     * 
+     * @return [type]
+     */
     function create($nama_minuman, $foto, $deskripsi, $harga){
         include 'config.php';
 
@@ -80,6 +102,16 @@ class minuman{
         return $respon;
     }
 
+    /**
+     * Digunakan untuk mengubah data minuman
+     * @param mixed $id_minuman
+     * @param mixed $nama_minuman
+     * @param mixed $foto
+     * @param mixed $deskripsi
+     * @param mixed $harga
+     * 
+     * @return [type]
+     */
     function update($id_minuman, $nama_minuman, $foto, $deskripsi, $harga){
         include 'config.php';
 
@@ -120,6 +152,12 @@ class minuman{
         return $respon;
     }
 
+    /**
+     * Digunakan untuk menghapus data minuman
+     * @param mixed $id_minuman
+     * 
+     * @return [type]
+     */
     function delete($id_minuman){
         include 'config.php';
 
